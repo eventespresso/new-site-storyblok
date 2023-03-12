@@ -1,8 +1,22 @@
+import { SbBlokData, storyblokEditable, StoryblokComponent } from "@storyblok/react";
+import type { ISbComponentType } from "storyblok-js-client";
+
 import Link from 'next/link'
 import React from 'react'
 
-const Header: React.FC = () => (
-	<header className="ee-bg-logo-blue sm:h-20 py-2 sm:sticky top-0">
+
+interface BlokProps extends SbBlokData {
+	PrimaryHeaderNav: Array<ISbComponentType<string>>;
+}
+
+
+type HeaderProps = {
+	blok: BlokProps
+}
+
+
+const Header: React.FC<HeaderProps> = ({ blok }) => (
+	<header className="ee-bg-logo-blue sm:h-20 py-2 sm:sticky top-0" {...storyblokEditable(blok)}>
 		<div className="max-w-5xl mx-auto px-6">
 			<div className="w-full flex flex-col sm:flex-row justify-center sm:justify-between items-center">
 				<div className="flex flex-col sm:flex-row items-center mb-4 sm:mb-0">
@@ -17,31 +31,11 @@ const Header: React.FC = () => (
 							</a>
 						</Link>
 					</div>
-					<div className="sm:ml-8 flex justify-around text-center">
-						<Link href="/pricing">
-							<a className="text-white hover:bg-slate-800 py-0.5 px-2 rounded-sm mx-1 transition duration-200">
-								Pricing
-							</a>
-						</Link>
-						<Link href="/features">
-							<a className="text-white hover:bg-slate-800 py-0.5 px-2 rounded-sm mx-1 transition duration-200">
-								Features
-							</a>
 
-						</Link>
-						<Link href="/use-cases">
-							<a className="text-white hover:bg-slate-800 py-0.5 px-2 rounded-sm mx-1 transition duration-200">
-								Use Cases
-							</a>
+					{blok.PrimaryHeaderNav.map((nestedBlok) => (
+						<StoryblokComponent className='' blok={nestedBlok} key={nestedBlok._uid} />
+					))}
 
-						</Link>
-						<Link href="/add-ons">
-							<a className="text-white hover:bg-slate-800 py-0.5 px-2 rounded-sm mx-1 transition duration-200">
-								Add-ons
-							</a>
-
-						</Link>
-					</div>
 				</div>
 				<Link href="/admin" prefetch={false}>
 					<a className="py-1 px-1 rounded text-white font-medium border border-white hover:bg-slate-800 hover:border-slate-800 transition duration-200">

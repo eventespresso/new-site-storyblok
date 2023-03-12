@@ -1,5 +1,5 @@
-import React from 'react'
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
+import React from 'react'
 
 const Page = ({ blok }) => (
 	<main className='max-w-5xl mx-auto mb-auto px-5' {...storyblokEditable(blok)}>
