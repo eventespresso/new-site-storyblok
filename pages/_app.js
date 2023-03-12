@@ -1,16 +1,9 @@
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 
-import { Feature, Grid, Page, Teaser } from "../components";
+import { Feature, Footer, Grid, Header, Page, Teaser } from '../components';
 
 import '../css/site.css';
 import '../css/style.css';
-
-const components = {
-  feature: Feature,
-  grid: Grid,
-  teaser: Teaser,
-  page: Page,
-};
 
 storyblokInit({
 	accessToken: 'PiTvwgCa2MKpqQ2Hw3KQWwtt',
@@ -18,11 +11,18 @@ storyblokInit({
 		region: 'us',
 	},
 	use: [apiPlugin],
-	components,
+	components: {
+		feature: Feature,
+		footer: Footer,
+		grid: Grid,
+		header: Header,
+		teaser: Teaser,
+		page: Page,
+	}
 });
 
-function MyApp({ Component, pageProps }) {
+function Website({ Component, pageProps }) {
   return <Component {...pageProps} />;
 }
 
-export default MyApp;
+export default Website;
