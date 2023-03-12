@@ -1,9 +1,6 @@
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 
-import Feature from "../components/Feature";
-import Grid from "../components/Grid";
-import Page from "../components/Page";
-import Teaser from "../components/Teaser";
+import { Feature, Grid, Page, Teaser } from "../components";
 
 import '../css/site.css';
 import '../css/style.css';
