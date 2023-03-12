@@ -2,7 +2,7 @@ import { storyblokInit, apiPlugin } from "@storyblok/react";
 
 import { Feature, Footer, Grid, Header, Page, Teaser } from '../components';
 
-import '../css/site.css';
+import '../css/globals.css';
 import '../css/style.css';
 
 storyblokInit({
