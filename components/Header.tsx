@@ -8,8 +8,13 @@ const Header: React.FC = () => (
 				<div className="flex flex-col sm:flex-row items-center mb-4 sm:mb-0">
 					<div className="ee-wordmark sm:ml-8 flex space-x-5 text-center">
 						<Link href="/" className="flex items-center text-white hover:text-slate-800 text-5xl font-black transition duration-200">
-							<img src="/event-espresso-cup-logo.png" className="logo-image w-16" alt="Event Espresso" />
-							Event Espresso
+							<>
+								<img src="/event-espresso-cup-logo.png"
+									 className="logo-image w-16"
+									 alt="Event Espresso"
+								/>
+								<span>Event Espresso</span>
+							</>
 						</Link>
 					</div>
 					<div className="sm:ml-8 flex justify-around text-center">
