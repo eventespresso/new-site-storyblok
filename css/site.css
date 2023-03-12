@@ -261,6 +261,10 @@ main {
 .ee-bg-logo-blue {
 	background-color: var(--ee-logo-bg-blue);
 }
+.ee-wordmark{
+    font-family: 'GROUPE', sans-serif;
+    letter-spacing: -2px;
+}
 
 .support-license-option-features ul {
     list-style: none !important;
