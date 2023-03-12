@@ -1,24 +1,18 @@
-import Head from 'next/head';
+import Layout from '../components/Layout';
 import styles from '../styles/Home.module.css';
 
-import { getStoryblokApi } from '@storyblok/react';
+import { getStoryblokApi, StoryblokComponent } from "@storyblok/react"
 
 export default function Home(props) {
+    const story = props.story
+
 	return (
-		<div className={styles.container}>
-			<Head>
-				<title>Create Next App</title>
-				<link rel='icon' href='/favicon.ico' />
-			</Head>
-
-			<header>
-				<h1>{props.story ? props.story.name : 'My Site'}</h1>
-			</header>
-
-			<main></main>
-		</div>
+		<Layout className={styles.container}>
+			<StoryblokComponent blok={story.content} />
+		</Layout>
 	);
-}
+  }
+
 
 export async function getStaticProps() {
 	// home is the default slug for the homepage in Storyblok
