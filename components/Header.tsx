@@ -7,28 +7,31 @@ const Header: React.FC = () => (
 			<div className="w-full flex flex-col sm:flex-row justify-center sm:justify-between items-center">
 				<div className="flex flex-col sm:flex-row items-center mb-4 sm:mb-0">
 					<div className="ee-wordmark sm:ml-8 flex space-x-5 text-center">
-						<Link href="/" className="flex items-center text-white hover:text-slate-800 text-5xl font-black transition duration-200">
-							<>
+						<Link href="/">
+							<span className="flex items-center text-white hover:text-slate-800 text-5xl font-black transition duration-200">
 								<img src="/event-espresso-cup-logo.png"
-									 className="logo-image w-16"
-									 alt="Event Espresso"
+									className="logo-image w-16"
+									alt="Event Espresso"
 								/>
 								<span>Event Espresso</span>
-							</>
+							</span>
 						</Link>
 					</div>
 					<div className="sm:ml-8 flex justify-around text-center">
-						<Link href="/pricing" className="text-white hover:bg-slate-800 py-0.5 px-2 rounded-sm mx-1 transition duration-200">
-							Pricing
+						<Link href="/pricing">
+							<span className="text-white hover:bg-slate-800 py-0.5 px-2 rounded-sm mx-1 transition duration-200">Pricing</span>
 						</Link>
-						<Link href="/features" className="text-white hover:bg-slate-800 py-0.5 px-2 rounded-sm mx-1 transition duration-200">
-							Features
+						<Link href="/features">
+							<span className="text-white hover:bg-slate-800 py-0.5 px-2 rounded-sm mx-1 transition duration-200">Features</span>
+
 						</Link>
-						<Link href="/use-cases" className="text-white hover:bg-slate-800 py-0.5 px-2 rounded-sm mx-1 transition duration-200">
-							Use Cases
+						<Link href="/use-cases">
+							<span className="text-white hover:bg-slate-800 py-0.5 px-2 rounded-sm mx-1 transition duration-200">Use Cases</span>
+
 						</Link>
-						<Link href="/add-ons" className="text-white hover:bg-slate-800 py-0.5 px-2 rounded-sm mx-1 transition duration-200">
-							Add-ons
+						<Link href="/add-ons">
+							<span className="text-white hover:bg-slate-800 py-0.5 px-2 rounded-sm mx-1 transition duration-200">Add-ons</span>
+
 						</Link>
 					</div>
 				</div>

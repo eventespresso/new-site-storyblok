@@ -6,18 +6,19 @@ import Footer from './Footer'
 
 interface LayoutProps {
 	children?: ReactNode
+	pageTitle?: string
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children, pageTitle = 'Event Espresso' }) => {
 	return (
 		<>
 			<Head>
-				<title>Event Espresso</title>
+				<title>{pageTitle}</title>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<div className="flex flex-col h-screen justify-between font-content antialiased">
 				<Header />
-				<main className="mb-auto">{children}</main>
+				{children}
 				<Footer />
 			</div>
 		</>

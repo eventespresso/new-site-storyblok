@@ -5,7 +5,8 @@ import Grid from "../components/Grid";
 import Page from "../components/Page";
 import Teaser from "../components/Teaser";
 
-import "../styles/globals.css";
+import '../css/site.css';
+import '../css/style.css';
 
 const components = {
   feature: Feature,

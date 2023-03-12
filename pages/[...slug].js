@@ -1,28 +1,15 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
 
-import {
-  useStoryblokState,
-  getStoryblokApi,
-  StoryblokComponent,
-} from "@storyblok/react";
+import { getStoryblokApi, StoryblokComponent, useStoryblokState } from '@storyblok/react';
 
 export default function Page({ story }) {
   story = useStoryblokState(story);
+	const pageTitle = story ? story.name : 'Event Espresso';
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>{story ? story.name : "My Site"}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <header>
-        <h1>{story ? story.name : "My Site"}</h1>
-      </header>
-
-      <StoryblokComponent blok={story.content} />
-    </div>
+		<Layout pageTitle={pageTitle}>
+			<StoryblokComponent blok={story.content} className='mb-auto text-3xl' />
+		</Layout>
   );
 }
 

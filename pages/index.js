@@ -1,17 +1,16 @@
 import Layout from '../components/Layout';
-import styles from '../styles/Home.module.css';
 
-import { getStoryblokApi, StoryblokComponent } from "@storyblok/react"
+import { getStoryblokApi, StoryblokComponent, useStoryblokState } from '@storyblok/react';
 
-export default function Home(props) {
-    const story = props.story
-
+export default function Home({ story }) {
+	story = useStoryblokState(story);
+	const pageTitle = story ? story.name : 'Event Espresso';
 	return (
-		<Layout className={styles.container}>
-			<StoryblokComponent blok={story.content} />
+		<Layout pageTitle={pageTitle}>
+			<StoryblokComponent blok={story.content} className='mb-auto text-3xl' />
 		</Layout>
 	);
-  }
+}
 
 
 export async function getStaticProps() {
