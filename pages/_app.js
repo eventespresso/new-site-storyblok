@@ -16,9 +16,12 @@ storyblokInit({
 		footer: Footer,
 		grid: Grid,
 		header: Header,
-		teaser: Teaser,
+		Layout: Layout,
+		NavLink: NavLink,
+		PrimaryHeaderNav: PrimaryHeaderNav,
 		page: Page,
-	}
+		teaser: Teaser,
+	},
 });
 
 function Website({ Component, pageProps }) {
