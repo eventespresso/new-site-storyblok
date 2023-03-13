@@ -1,4 +1,4 @@
-import { apiPlugin, getStoryblokApi, storyblokInit } from '@storyblok/react';
+import { apiPlugin, storyblokInit } from '@storyblok/react';
 
 import { components } from '../components';
 
@@ -13,9 +13,6 @@ storyblokInit({
 	use: [apiPlugin],
 	components,
 });
-
-const storyblokApi = getStoryblokApi();
-const { data } = await storyblokApi.get('cdn/stories', { version: 'draft' });
 
 function Website({ Component, pageProps }) {
 	return <Component {...pageProps} />;
