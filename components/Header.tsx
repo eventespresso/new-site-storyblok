@@ -1,21 +1,11 @@
-import { SbBlokData, storyblokEditable, StoryblokComponent } from "@storyblok/react";
-import type { ISbComponentType } from "storyblok-js-client";
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 
 import Link from 'next/link'
 import React from 'react'
 
+import type { HeaderProps, SbBlokData } from "./types";
 
-interface BlokProps extends SbBlokData {
-	PrimaryHeaderNav: Array<ISbComponentType<string>>;
-}
-
-
-type HeaderProps = {
-	blok: BlokProps
-}
-
-
-const Header: React.FC<HeaderProps> = ({ blok }) => (
+export const Header: React.FC<HeaderProps> = ({ blok }) => (
 	<header className="ee-bg-logo-blue sm:h-20 py-2 sm:sticky top-0" {...storyblokEditable(blok)}>
 		<div className="max-w-5xl mx-auto px-6">
 			<div className="w-full flex flex-col sm:flex-row justify-center sm:justify-between items-center">
@@ -32,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ blok }) => (
 						</Link>
 					</div>
 
-					{blok.PrimaryHeaderNav.map((nestedBlok) => (
+					{blok.PrimaryHeaderNav.map((nestedBlok: SbBlokData) => (
 						<StoryblokComponent className='' blok={nestedBlok} key={nestedBlok._uid} />
 					))}
 
@@ -48,5 +38,3 @@ const Header: React.FC<HeaderProps> = ({ blok }) => (
 		</div>
 	</header>
 )
-
-export default Header

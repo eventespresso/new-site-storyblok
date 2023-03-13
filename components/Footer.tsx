@@ -1,7 +1,10 @@
 import Link from 'next/link'
 import React from 'react'
 
-const Footer = () => {
+import type { SbBlokData } from "./types";
+
+
+export const Footer = () => {
 	return (
 		<footer className="py-6 px-2 text-white bg-gray-900 dark:bg-gray-900">
 			<div className="max-w-5xl mx-auto grid grid-flow-row-dense grid-cols-2 md:grid-cols-3 lg:grid-cols-5 leading-4">
@@ -116,5 +119,3 @@ const Footer = () => {
 		</footer>
 	)
 }
-
-export default Footer

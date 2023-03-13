@@ -1,26 +1,20 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import Head from 'next/head';
 
-import Header from './Header'
-import Footer from './Footer'
+import { Footer, Header } from './index';
+import type { LayoutProps } from "./types";
 
-interface LayoutProps {
-	children?: ReactNode
-	pageTitle?: string
-}
 
-const Layout: React.FC<LayoutProps> = ({ children, pageTitle = 'Event Espresso' }) => (
+export const Layout: React.FC<LayoutProps> = ({ children, pageTitle = 'Event Espresso', story }) => (
 	<>
 		<Head>
 			<title>{pageTitle}</title>
 			<link rel='icon' href='/favicon.ico' />
 		</Head>
 		<body className="flex flex-col h-80 justify-between font-content antialiased">
-			<Header />
+			<Header blok={story.content} />
 			{children}
 			<Footer />
 		</body>
 	</>
 );
-
-export default Layout

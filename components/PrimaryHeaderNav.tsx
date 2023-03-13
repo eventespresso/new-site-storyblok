@@ -1,4 +1,5 @@
-import { SbBlokData, storyblokEditable, StoryblokComponent } from "@storyblok/react";
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
+import type { SbBlokData } from "./types";
 
 import React from 'react'
 
