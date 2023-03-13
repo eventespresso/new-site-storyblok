@@ -23,7 +23,7 @@ export async function getStaticProps({ params }) {
 	};
 
 	let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
-	let { data: config } = await storyblokApi.get('cdn/stories/PrimaryHeaderNav');
+	let { data: config } = await storyblokApi.get('cdn/stories/config');
 
 	return {
 		props: {
