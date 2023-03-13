@@ -1,9 +1,19 @@
-export { Feature } from './Feature';
-export { Footer } from './Footer';
-export { Grid } from './Grid';
-export { Header } from './Header';
-export { Layout } from './Layout';
-export { NavLink } from './NavLink';
-export { Page } from './Page';
-export { PrimaryHeaderNav } from './PrimaryHeaderNav';
-export { Teaser } from './Teaser';
+import { Feature } from './Feature';
+import { Footer } from './Footer';
+import { Grid } from './Grid';
+import { Header } from './Header';
+import { Layout } from './Layout';
+import { NavLink } from './NavLink';
+import { Page } from './Page';
+import { PrimaryHeaderNav } from './PrimaryHeaderNav';
+
+export const components = {
+	feature: Feature,
+	footer: Footer,
+	grid: Grid,
+	header: Header,
+	Layout: Layout,
+	NavLink: NavLink,
+	page: Page,
+	PrimaryHeaderNav: PrimaryHeaderNav,
+};

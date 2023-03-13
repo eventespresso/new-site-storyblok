@@ -1,7 +1,7 @@
-import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
-
 import Link from 'next/link'
 import React from 'react'
+
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 
 import type { HeaderProps, SbBlokData } from "./types";
 

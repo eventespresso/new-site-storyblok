@@ -1,7 +1,9 @@
 import React from 'react'
 import Head from 'next/head';
 
-import { Footer, Header } from './index';
+import { Footer } from './Footer';
+import { Header } from './Header';
+
 import type { LayoutProps } from "./types";
 
 

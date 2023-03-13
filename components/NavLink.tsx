@@ -1,7 +1,7 @@
-import { storyblokEditable } from "@storyblok/react";
-
 import Link from 'next/link'
 import React from 'react'
+
+import { storyblokEditable } from "@storyblok/react";
 
 import type { NavLinkProps } from "./types";
 

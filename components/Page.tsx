@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 
 import type { SbBlokData } from "./types";
