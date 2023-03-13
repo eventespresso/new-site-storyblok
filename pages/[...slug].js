@@ -23,13 +23,13 @@ export async function getStaticProps({ params }) {
 	};
 
 	let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
-	let { data: config } = await storyblokApi.get('cdn/stories/config');
+	let { data: header_primary_nav } = await storyblokApi.get('cdn/stories/header-primary-navigation');
 
 	return {
 		props: {
 			story: data ? data.story : false,
 			key: data ? data.story.id : false,
-			config: config ? config.story : false,
+			header_primary_nav: header_primary_nav ? header_primary_nav.story : false,
 		},
 		revalidate: 3600,
 	};
