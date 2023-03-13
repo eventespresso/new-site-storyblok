@@ -1,6 +1,6 @@
-import { storyblokInit, apiPlugin } from '@storyblok/react';
+import { apiPlugin, getStoryblokApi, storyblokInit } from '@storyblok/react';
 
-import { Feature, Footer, Grid, Header, Layout, NavLink, Page, PrimaryHeaderNav, Teaser } from '../components';
+import { components } from '../components';
 
 import '../css/globals.css';
 import '../css/style.css';
@@ -11,18 +11,11 @@ storyblokInit({
 		region: 'us',
 	},
 	use: [apiPlugin],
-	components: {
-		feature: Feature,
-		footer: Footer,
-		grid: Grid,
-		header: Header,
-		Layout: Layout,
-		NavLink: NavLink,
-		page: Page,
-		PrimaryHeaderNav: PrimaryHeaderNav,
-		teaser: Teaser,
-	},
+	components,
 });
+
+const storyblokApi = getStoryblokApi();
+const { data } = await storyblokApi.get('cdn/stories', { version: 'draft' });
 
 function Website({ Component, pageProps }) {
 	return <Component {...pageProps} />;
