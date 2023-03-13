@@ -4,10 +4,12 @@ import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 
 import type { SbBlokData } from "./types";
 
-export const PrimaryHeaderNav = ({ blok }) => (
+const PrimaryHeaderNav = ({ blok }) => (
 	<div className="sm:ml-8 flex justify-around text-center" {...storyblokEditable({ blok })}>
-		{blok.links.map((nestedBlok: SbBlokData) => (
+		{blok?.links.map((nestedBlok: SbBlokData) => (
 			<StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
 		))}
 	</div>
 )
+
+export default PrimaryHeaderNav;

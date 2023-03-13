@@ -5,7 +5,7 @@ import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 
 import type { HeaderProps, SbBlokData } from "./types";
 
-export const Header: React.FC<HeaderProps> = ({ blok }) => (
+const Header: React.FC<HeaderProps> = ({ blok }) => (
 	<header className="ee-bg-logo-blue sm:h-20 py-2 sm:sticky top-0" {...storyblokEditable(blok)}>
 		<div className="max-w-5xl mx-auto px-6">
 			<div className="w-full flex flex-col sm:flex-row justify-center sm:justify-between items-center">
@@ -22,7 +22,7 @@ export const Header: React.FC<HeaderProps> = ({ blok }) => (
 						</Link>
 					</div>
 
-					{blok.PrimaryHeaderNav.map((nestedBlok: SbBlokData) => (
+					{blok?.PrimaryHeaderNav.map((nestedBlok: SbBlokData) => (
 						<StoryblokComponent className='' blok={nestedBlok} key={nestedBlok._uid} />
 					))}
 
@@ -38,3 +38,5 @@ export const Header: React.FC<HeaderProps> = ({ blok }) => (
 		</div>
 	</header>
 )
+
+export default Header;

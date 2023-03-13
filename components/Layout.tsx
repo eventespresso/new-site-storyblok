@@ -1,13 +1,13 @@
 import React from 'react'
 import Head from 'next/head';
 
-import { Footer } from './Footer';
-import { Header } from './Header';
+import { default as Footer } from './Footer';
+import { default as Header } from './Header';
 
 import type { LayoutProps } from "./types";
 
 
-export const Layout: React.FC<LayoutProps> = ({ children, pageTitle = 'Event Espresso', story }) => (
+const Layout: React.FC<LayoutProps> = ({ children, pageTitle = 'Event Espresso', story }) => (
 	<>
 		<Head>
 			<title>{pageTitle}</title>
@@ -20,3 +20,5 @@ export const Layout: React.FC<LayoutProps> = ({ children, pageTitle = 'Event Esp
 		</body>
 	</>
 );
+
+export default Layout;

@@ -2,7 +2,7 @@ import React from 'react'
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 
 
-export const Grid = ({ blok }) => {
+const Grid = ({ blok }) => {
   return (
     <div className="grid" {...storyblokEditable(blok)}>
       {blok.columns.map((nestedBlok) => (
@@ -11,3 +11,5 @@ export const Grid = ({ blok }) => {
     </div>
   );
 };
+
+export default Grid;
